@@ -19,7 +19,6 @@ mongoose
     app.get("/", (req, res) => {
       res.send("Olá mundo");
     });
-
     app.listen(port, () => {
       console.log(`Estou conectado na porta: ${port}`);
     });

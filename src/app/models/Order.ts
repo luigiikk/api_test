@@ -9,7 +9,7 @@ export const Order = model(
     },
     status: {
       type: String,
-      enem: ["WAITING", "IN_PRODUCTION", "DONE"],
+      enum: ["WAITING", "IN_PRODUCTION", "DONE"],
       default: "WAITING",
     },
     createAt: {
