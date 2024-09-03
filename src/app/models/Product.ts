@@ -21,7 +21,6 @@ export const Product= model(
     },
     ingredients: [
       {
-        required: true,
         name: {
           type: String,
           required: true,

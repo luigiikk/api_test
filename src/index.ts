@@ -1,10 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-
+import path from "node:path";
+import { router } from "./router";
 dotenv.config();
-
-const port = 3333;
 
 const connectionString = process.env.CONNECTIONSTRING;
 
@@ -16,9 +15,11 @@ mongoose
   .connect(connectionString)
   .then(() => {
     const app = express();
-    app.get("/", (req, res) => {
-      res.send("Olá mundo");
-    });
+    const port = 3333;
+
+    app.use('/uploads', express.static(path.resolve(__dirname, "..", "uploads")))
+    app.use(express.json());
+    app.use(router);
     app.listen(port, () => {
       console.log(`Estou conectado na porta: ${port}`);
     });
