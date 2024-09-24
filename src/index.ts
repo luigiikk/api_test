@@ -20,7 +20,7 @@ mongoose
     app.use('/uploads', express.static(path.resolve(__dirname, "..", "uploads")))
     app.use(express.json());
     app.use(router);
-    app.listen(port, () => {
+    app.listen(process.env.PORT ?? port, () => {
       console.log(`Estou conectado na porta: ${port}`);
     });
   })
