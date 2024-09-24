@@ -10,6 +10,8 @@ import { listOrders } from "./app/useCases/orders/listOrders";
 import { createOder } from "./app/useCases/orders/createOrder";
 import { changeOrderStatus } from "./app/useCases/orders/changeOrderStatus";
 import { deleteOrder } from "./app/useCases/orders/deleteOrder";
+import { createUser } from "./app/useCases/user/createUser";
+import { listUsers } from "./app/useCases/user/listUsers";
 
 export const router = Router();
 
@@ -36,3 +38,6 @@ router.get("/orders", listOrders);
 router.post("/orders", createOder);
 router.patch("/orders/:orderId", changeOrderStatus);
 router.delete("/orders/:orderId", deleteOrder);
+
+router.post("/user", createUser);
+router.get("/users", listUsers);
