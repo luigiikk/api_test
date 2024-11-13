@@ -13,6 +13,8 @@ import { deleteOrder } from "./app/useCases/orders/deleteOrder";
 import { createUser } from "./app/useCases/user/createUser";
 import { listUsers } from "./app/useCases/user/listUsers";
 import { loginUser } from "./app/useCases/user/loginUser";
+import { authenticateToken } from "./middlewares/authenticateToken";
+import { getUserProfile } from "./app/useCases/user/getUserProfile";
 
 export const router = Router();
 
@@ -43,3 +45,4 @@ router.delete("/orders/:orderId", deleteOrder);
 router.post("/users", createUser);
 router.get("/users", listUsers);
 router.post("/login", loginUser);
+router.get('/user/profile', authenticateToken, getUserProfile);
