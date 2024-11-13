@@ -12,6 +12,7 @@ import { changeOrderStatus } from "./app/useCases/orders/changeOrderStatus";
 import { deleteOrder } from "./app/useCases/orders/deleteOrder";
 import { createUser } from "./app/useCases/user/createUser";
 import { listUsers } from "./app/useCases/user/listUsers";
+import { loginUser } from "./app/useCases/user/loginUser";
 
 export const router = Router();
 
@@ -39,5 +40,6 @@ router.post("/orders", createOder);
 router.patch("/orders/:orderId", changeOrderStatus);
 router.delete("/orders/:orderId", deleteOrder);
 
-router.post("/user", createUser);
+router.post("/users", createUser);
 router.get("/users", listUsers);
+router.post("/login", loginUser);
