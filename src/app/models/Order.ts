@@ -16,6 +16,15 @@ export const Order = model(
       type: Date,
       default: Date.now,
     },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true
+    },
+    total: {
+      type: Number,
+      default: 0
+    },
     products: {
       required: true,
       type: [

@@ -19,6 +19,11 @@ const userSchema = new Schema({
       'Por favor, insira um email válido'
     ]
   },
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user'
+  },
   password: {
     type: String,
     required: [true, 'Senha é obrigatória'],
