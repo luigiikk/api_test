@@ -14,7 +14,7 @@ export async function loginUser(req: Request, res: Response) {
       });
     }
 
-    
+
     const user = await User.findOne({ email });
 
 
@@ -50,7 +50,8 @@ export async function loginUser(req: Request, res: Response) {
       _id: user._id,
       name: user.name,
       email: user.email,
-      orders: user.orders
+      orders: user.orders,
+      role: user.role 
     };
 
 

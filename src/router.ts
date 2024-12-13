@@ -15,6 +15,7 @@ import { listUsers } from "./app/useCases/user/listUsers";
 import { loginUser } from "./app/useCases/user/loginUser";
 import { authenticateToken } from "./middlewares/authenticateToken";
 import { getUserProfile } from "./app/useCases/user/getUserProfile";
+import { listOrdersByUserId } from "./app/useCases/orders/listOrdersByUserId";
 
 export const router = Router();
 
@@ -41,6 +42,8 @@ router.get("/orders", listOrders);
 router.post("/orders", authenticateToken, createOrder);
 router.patch("/orders/:orderId", changeOrderStatus);
 router.delete("/orders/:orderId", deleteOrder);
+
+router.get("/user/orders", authenticateToken, listOrdersByUserId);
 
 router.post("/users", createUser);
 router.get("/users", listUsers);
